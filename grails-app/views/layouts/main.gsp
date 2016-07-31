@@ -37,9 +37,9 @@
             <div class="collapse navbar-collapse" id="navbar-collapse-3">
                 <sec:ifAnyGranted roles="${com.app.constants.Constants.ROLE_USER}">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Session</a></li>
-                        <li><a href="#">Product</a></li>
-                        <li><g:link controller="user" action="index" >User</g:link></li>
+                        <li><g:link controller="session" action="index">Session</g:link></li>
+                        <li><g:link controller="product" action="index">Product</g:link></li>
+                        <li><g:link controller="user" action="index">User</g:link></li>
                         <li><a href="#">About</a></li>
                         <li><a href="/home/j_spring_security_logout">Logout</a></li>
                         <li>
@@ -66,6 +66,7 @@
         </div>
     </g:if>
 </div>
+
 <div class="container">
     <g:layoutBody/>
 </div>

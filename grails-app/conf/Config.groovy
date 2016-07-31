@@ -122,8 +122,8 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.app.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.app.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.app.Role'
 grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/user/index'
-grails.plugin.springsecurity.failureHandler.defaultFailureUrl="/register/login"
-grails.plugin.springsecurity.failureHandler.afterLogoutUrl="/register/login"
+grails.plugin.springsecurity.failureHandler.defaultFailureUrl = "/register/login"
+grails.plugin.springsecurity.failureHandler.afterLogoutUrl = "/register/login"
 
 
 grails.plugin.springsecurity.rejectIfNoRule = false
@@ -149,3 +149,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 grails.plugin.springsecurity.roleHierarchy = '''
    ROLE_ADMIN>ROLE_USER
 '''
+
+grails.databinding.dateFormats = [
+        'MMddyyyy', 'dd/MM/yyyy HH:mm:ss.S', 'dd-MM-yyyy HH:mm:ss.S', 'yyyy-MM-dd', 'yyyy-MM-dd HH:mm:ss.S', "yyyy-MM-dd'T'hh:mm:ss'Z'"
+]
