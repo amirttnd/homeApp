@@ -122,6 +122,9 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.app.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.app.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.app.Role'
 grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/user/index'
+grails.plugin.springsecurity.failureHandler.defaultFailureUrl="/register/login"
+grails.plugin.springsecurity.failureHandler.afterLogoutUrl="/register/login"
+
 
 grails.plugin.springsecurity.rejectIfNoRule = false
 grails.plugin.springsecurity.fii.rejectPublicInvocations = false

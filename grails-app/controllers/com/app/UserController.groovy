@@ -6,7 +6,7 @@ import grails.transaction.Transactional
 
 import static org.springframework.http.HttpStatus.*
 
-@Secured(Constants.ROLE_ANONYMOUS)
+@Secured(Constants.ROLE_USER)
 class UserController {
 
 

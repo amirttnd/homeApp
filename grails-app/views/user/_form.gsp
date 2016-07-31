@@ -7,7 +7,7 @@
 		<g:message code="user.username.label" default="Username" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="username" required="" value="${userInstance?.username}"/>
+	<g:textField name="username" required="" class="form-control" value="${userInstance?.username}"/>
 
 </div>
 
@@ -16,43 +16,38 @@
 		<g:message code="user.password.label" default="Password" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="password" required="" value="${userInstance?.password}"/>
+	<g:textField name="password" required="" class="form-control" value="${userInstance?.password}"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'accountExpired', 'error')} ">
+<div class="checkbox ${hasErrors(bean: userInstance, field: 'accountExpired', 'error')} ">
 	<label for="accountExpired">
-		<g:message code="user.accountExpired.label" default="Account Expired" />
-		
+        <g:checkBox name="accountExpired"  value="${userInstance?.accountExpired}" />
+        <g:message code="user.accountExpired.label" default="Account Expired" />
 	</label>
-	<g:checkBox name="accountExpired" value="${userInstance?.accountExpired}" />
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'accountLocked', 'error')} ">
+<div class="checkbox ${hasErrors(bean: userInstance, field: 'accountLocked', 'error')} ">
 	<label for="accountLocked">
-		<g:message code="user.accountLocked.label" default="Account Locked" />
-		
+        <g:checkBox name="accountLocked" value="${userInstance?.accountLocked}" />
+        <g:message code="user.accountLocked.label" default="Account Locked" />
 	</label>
-	<g:checkBox name="accountLocked" value="${userInstance?.accountLocked}" />
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'enabled', 'error')} ">
+<div class="checkbox" ${hasErrors(bean: userInstance, field: 'enabled', 'error')} ">
 	<label for="enabled">
-		<g:message code="user.enabled.label" default="Enabled" />
-		
+        <g:checkBox name="enabled" value="${userInstance?.enabled}" />
+        <g:message code="user.enabled.label" default="Enabled" />
 	</label>
-	<g:checkBox name="enabled" value="${userInstance?.enabled}" />
-
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'passwordExpired', 'error')} ">
+<div class="checkbox">
 	<label for="passwordExpired">
-		<g:message code="user.passwordExpired.label" default="Password Expired" />
-		
+        <g:checkBox name="passwordExpired" value="${userInstance?.passwordExpired}" />
+        <g:message code="user.passwordExpired.label" default="Password Expired" />
 	</label>
-	<g:checkBox name="passwordExpired" value="${userInstance?.passwordExpired}" />
 
 </div>
 
@@ -61,7 +56,7 @@
 		<g:message code="user.phoneNumber.label" default="Phone Number" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="phoneNumber" required="" value="${userInstance?.phoneNumber}"/>
+	<g:textField name="phoneNumber" class="form-control" required="" value="${userInstance?.phoneNumber}"/>
 
 </div>
 
