@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script type="javascript" th:href="@{/js/jquery.min.js}"></script>
+    <title></title>
+</head>
+<body>
+<div th:replace="layout/header::header"></div>
+<div class="content">
+    <div class="well well-sm">
+        <a th:href="@{/session/create}" class="btn btn-default ">Create New Session</a>
+    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <!--<th>Users</th>-->
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="session:${sessions}">
+            <td th:text="session.startDate"></td>
+            <td th:text="session.endDate"></td>
+            <td th:text="session.status.getValue()"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

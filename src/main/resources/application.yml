@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: development
+
+---
+
+spring:
+  profiles: development
+  address: localhost:8080
+  datasource:
+    url: jdbc:mysql://localhost:3306/home_app
+    username: root
+    password: igdefault
+  jpa:
+    hibernate:
+      ddl-auto: update
