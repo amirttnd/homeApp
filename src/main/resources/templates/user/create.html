@@ -3,6 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8"/>
+    <meta th:fragment="viewport" name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <script type="javascript" th:href="@{/js/jquery.min.js}"></script>
@@ -11,7 +12,24 @@
 <body>
 <div th:replace="layout/header::header"></div>
 <div class="content">
-    
+    <form action="/user/save" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" th:value="${userModel.name}" class="form-control" id="name" placeholder="Enter name" name="name"/>
+        </div>
+
+        <div class="form-group">
+            <label for="username">Email:</label>
+            <input type="email" th:value="${userModel.username}" class="form-control" id="username" placeholder="Enter email" name="username"/>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password"/>
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
 </div>
 </body>
 </html>

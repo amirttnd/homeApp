@@ -3,6 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8"/>
+    <meta th:fragment="viewport" name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title></title>
 </head>
 <body>
@@ -12,9 +13,9 @@
             <a class="navbar-brand" href="#">Home App</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="#">Session</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="#">User</a></li>
+            <li><a href="/session/list">Session</a></li>
+            <li><a href="/product/list">Product</a></li>
+            <li><a href="/user/list">User</a></li>
         </ul>
     </div>
 </nav>

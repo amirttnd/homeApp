@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8"/>
-    <meta th:fragment="viewport" name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta th:replace="layout/header::viewport"/>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <script type="javascript" th:href="@{/js/jquery.min.js}"></script>
@@ -13,21 +13,21 @@
 <div th:replace="layout/header::header"></div>
 <div class="content">
     <div class="well well-sm">
-        <a th:href="@{/user/create}" class="btn btn-default ">Create New User</a>
+        <a th:href="@{/product/create}" class="btn btn-default ">Add Detail</a>
     </div>
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>User Name</th>
-            <th>Active</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>User</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="user:${users}">
-            <td th:text="${user.getName()}"></td>
-            <td th:text="${user.getUsername()}"></td>
-            <td th:text="${user.getIsActive()}"></td>
+        <tr th:each="product:${products}">
+            <td th:text="${product.getName()}"></td>
+            <td th:text="${product.getPrice()}"></td>
+            <td th:text="${product.getUser().name}"></td>
         </tr>
         </tbody>
     </table>

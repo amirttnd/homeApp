@@ -3,6 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8"/>
+    <meta th:replace="layout/header::viewport"/>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <script type="javascript" th:href="@{/js/jquery.min.js}"></script>
@@ -19,15 +20,19 @@
         <tr>
             <th>Start Date</th>
             <th>End Date</th>
-            <!--<th>Users</th>-->
             <th>Status</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="session:${sessions}">
-            <td th:text="session.startDate"></td>
-            <td th:text="session.endDate"></td>
-            <td th:text="session.status.getValue()"></td>
+            <td th:text="${#dates.format(session.startDate,'dd-MM-yyyy HH:mm')}"></td>
+            <td>
+                <span th:if="${session.closeDate}"
+                      th:text="${#dates.format(session.closeDate,'dd-MM-yyyy HH:mm')}"></span>
+            </td>
+            <td th:text="${session.status.getValue()}"></td>
+            <td><a th:href="@{/session/close(id=*{session.id})}" class="btn btn-sm btn-danger">Close</a></td>
         </tr>
         </tbody>
     </table>

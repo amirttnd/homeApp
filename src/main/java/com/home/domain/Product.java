@@ -24,6 +24,17 @@ public class Product {
     Date lastUpdated;
 
 
+    @ManyToOne
+    Session session;
+
+    public Session getSession() {
+        return session;
+    }
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
+
     @PrePersist
     void beforeInsert() {
         this.dateCreated = new Date();

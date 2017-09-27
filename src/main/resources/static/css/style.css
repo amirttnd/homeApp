@@ -9,3 +9,15 @@
     left: 0;
     right: 0;
 }
+
+.content {
+    padding: 0 10px;
+}
+
+.nav > li {
+    float: left;
+}
+
+tbody{
+    font-size: 13px;
+}

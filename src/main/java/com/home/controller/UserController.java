@@ -1,9 +1,11 @@
 package com.home.controller;
 
 import com.home.domain.User;
+import com.home.model.UserModel;
 import com.home.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,7 +27,15 @@ public class UserController {
     }
 
     @RequestMapping("/create")
-    String create() {
-        return "/user/create";
+    ModelAndView create(@ModelAttribute("userModel") UserModel userModel) {
+        ModelAndView modelAndView = new ModelAndView("/user/create");
+        modelAndView.addObject("userModel", userModel);
+        return modelAndView;
+    }
+
+    @RequestMapping("/save")
+    String save(@ModelAttribute UserModel userModel) {
+        userService.save(userModel);
+        return "redirect:/user/list";
     }
 }
