@@ -26,4 +26,9 @@ public class LoginController {
         String viewName = loginService.isAuthorized(username, password) ? "session/list" : "/login";
         return String.format("redirect:%s", viewName);
     }
+
+    @RequestMapping("/404Page")
+    void doLogin() throws Exception {
+        throw new Exception("Page Not Found Exception");
+    }
 }
